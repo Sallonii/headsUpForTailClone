@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/d1c2ea8b80.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <title>HEAD UP FOR TAILS CLONE</title>
+    <link href="prod.css" rel="stylesheet">
+</head>
+
+<body>
+    <!---navbar for small devices-->
+    <div class="container">
+        <div class="row">
+            <div class="d-md-none">
+                <nav class="navbar navbar-expand-lg navbar-light nav-style fixed-top">
+                    <div class="container">
+                        <a class="navbar-brand" href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="25" fill="currentColor" class="bi bi-cart-dash" viewBox="0 0 16 16">
+                                <path d="M6.5 7a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4z"/>
+                                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                                </svg>
+                        </a>
+                        <img src="https://cdn.shopify.com/s/files/1/0086/0795/7054/files/GIFFY1.gif?v=1693543991" class="nav-img-style"/>
+                        <button class="navbar-toggler" style="background-color: white;" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                            <div class="d-flex flex-row justify-content-end">
+                                <div class="navbar-nav">
+                                    <div class="nav-link active nav-items-bg pl-4 pr-4" id="navItem1" href="#wcuSection">
+                                        <hr/>
+                                        <a class="d-flex flex-row" onclick="getDogToysList()">
+                                            <img src="https://res.cloudinary.com/dwj8ezxgi/image/upload/v1694404738/domestic-dog_thumb_square_uytnsu.jpg" class="animals-nav-option-img mr-3"/>
+                                            <p class="mr-3 text-black-50"><b>DOGS</b></p>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-arrow-bar-right mr-3" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8Zm-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5Z"/>
+                                            </svg>
+                                        </a>
+                                        <hr/>
+                                        <a class="d-flex flex-row" onclick="getCatBedList()">
+                                            <img src="https://res.cloudinary.com/dwj8ezxgi/image/upload/v1694404731/NationalGeographic_2572187_square_pbt2p9.jpg" class="animals-nav-option-img mr-3"/>
+                                            <p class="mr-3 text-black-50"><b>CATS</b></p>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-arrow-bar-right mr-3" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8Zm-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5Z"/>
+                                            </svg>
+                                        </a>
+                                        <hr/>
+                                        <a class="d-flex flex-row" onclick="getRabbitFoodList()">
+                                            <img src="https://res.cloudinary.com/dwj8ezxgi/image/upload/v1694405534/facts_about_rats_238780573_768_mbsf6y.jpg" class="animals-nav-option-img mr-3"/>
+                                            <p class="mr-3 text-black-50"><b>SMALL ANIMALS</b></p>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-arrow-bar-right mr-3" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8Zm-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5Z"/>
+                                            </svg>
+                                        </a>
+                                        <hr/>
+                                        <a class="d-flex flex-row">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="orange" class="bi bi-geo-alt-fill mr-3 mt-1" viewBox="0 0 16 16">
+                                                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                                                </svg>
+                                            <p class="mr-3 text-danger"><b>STORE LOCATOR</b></p>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-arrow-bar-right mr-3" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8Zm-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5Z"/>
+                                            </svg>
+                                        </a>
+                                        <span class="sr-only">(current)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <!---->
+            <div class="d-md-none">
+                <div class="mt-5 pl-5">
+                    <input type="search" class="search-box-style p-3" placeholder="Search anything for your pet..."/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!---logo, search bar and other options for medium and above devices-->
+    <div class="container">
+        <div class="row pt-2">
+            <div class="col-md-2 d-none d-md-block pr-1">
+                <img src="https://cdn.shopify.com/s/files/1/0086/0795/7054/files/GIFFY1.gif?v=1693543991" class="nav-img-style"/> 
+            </div>
+            <div class="col-md-4 d-none d-md-block mr-5">
+                <input type="search" class="search-box-style-md p-3" placeholder="Search anything for your pet..."/>
+            </div>
+            <div class="col-md-2 d-none d-md-block ml-5">
+                <div class="d-flex flex-row justify-content-center">
+                    <i class="fas fa-headset pt-2 pr-1" style="color: #e09b06;"></i>
+                    <p>Support</p>
+                </div>
+            </div>
+            <div class="col-md-2 d-none d-md-block">
+                <div class="d-flex flex-row justify-content-center">
+                    <i class="fas fa-user-circle pt-2 pr-1" style="color: #db8b00;"></i>
+                    <p>Account</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---product categories options-->
+    <div class="container">
+        <div class="row">
+            <div class="d-none d-md-block col-md-3">
+                <div class="dropdown m-1">
+                    <button class="btn text-warning dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Dogs
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                      <a class="dropdown-item" onclick="getDogToysList()">DOG TOYS</a>
+                      <a class="dropdown-item" onclick="getDogClothingList()">CLOTHING</a>
+                    </div>
+                </div>
+            </div>
+            <div class=" d-none d-md-block col-md-3">
+                <div class="dropdown m-1">
+                    <button class="btn text-warning dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Cats
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                      <a class="dropdown-item" onclick="getCatBedList()">CAT BEDDINGS</a>
+                      <a class="dropdown-item" onclick="getCatBowlsList()">CAT BOWLS</a>
+                    </div>
+                </div>
+            </div>
+            <div class="d-none d-md-block col-md-3">
+                <div class="dropdown m-1">
+                    <button class="btn text-warning dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Small Animals
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                      <a class="dropdown-item" onclick="getRabbitFoodList()">Rabbits & Guinea Pigs</a>
+                      <a class="dropdown-item" onclick="getBirdFoodList()" href="#!">Birds</a>
+                    </div>
+                </div>
+            </div>
+            <div class="d-none d-md-block col-md-3">
+                <div class="dropdown m-1">
+                    <button class="btn text-warning dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Store Locator
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                      <a class="dropdown-item" href="#!">HUPT SPA</a>
+                      <a class="dropdown-item" href="#!">PET FRIENDLY</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--download HUFT APP option-->
+    <div class="download-option-bg d-flex flex-row justify-content-center">
+        <i class="fab fa-google-play mt-2" style="color: #ffffff;"></i>
+        <p class="text-white ml-2 mt-1">Download The HUFT App</p>
+    </div>
+
+    <!----container to display products of different animals with diverse categories-->
+    <div class="container">
+        <div class="row" id="dogToyCategories">
+
+        </div>
+    </div>
+
+    <!---carousel for all devices different images for different devices design using bootstrap grid system-->
+    <div id="carouselExampleIndicators" class="carousel slide m-3 " data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner big-carousel-style">
+          <div class="carousel-item active">
+            <img class="d-block w-100 d-md-none" src="https://headsupfortails.com/cdn/shop/files/pet_food_mobile_80e13122-8425-4903-aa05-df2b8972c9f8_640x.jpg?v=1694185809" alt="First slide">
+            <img class="d-none d-md-block w-100" src="https://headsupfortails.com/cdn/shop/files/pet_food_web_e65a4ca7-3994-4490-abb7-775562df58ed_1500x.jpg?v=1694185808" alt="First slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100 d-md-none" src="https://headsupfortails.com/cdn/shop/files/SBS_ends_homepage_banner_mobile_640x.jpg?v=1694184091" alt="Second slide">
+            <img class="d-none d-md-block w-100" src="https://headsupfortails.com/cdn/shop/files/Frame_1171280306_1500x.jpg?v=1694169118" alt="Second slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100 d-md-none" src="https://headsupfortails.com/cdn/shop/files/SWF_-_Mob_640x.jpg?v=1694169116" alt="Third slide">
+            <img class="d-none d-md-block w-100" src="https://headsupfortails.com/cdn/shop/files/Dash-Dog-_1920x400_076dad13-fdd1-4173-b89e-741e224a2b71_1500x.jpg?v=1694410579" alt="Second slide">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      <!--image with count for small devices-->
+        <div class="wholesome-img p-2 d-md-none"> 
+            <h3 class="pt-4 pl-5" id="num">33840</h3>
+        </div>
+
+        <!--image with count for medium and above devices-->
+        <div class="wholesome-img-md p-2 d-none d-md-block">
+            <h1 class="pt-4 timer-style" id="num2">33840</h1>
+        </div>
+
+      <img src="https://headsupfortails.com/cdn/shop/files/loyalty_mobile_39ae517c-31cd-4f20-8ebc-cfb2fda9d513.png?v=1693482345" class="w-100 p-3 d-md-none" />
+      <img src="https://headsupfortails.com/cdn/shop/files/Sara_s_message_web_dec3b7da-fd2e-4de4-a99b-e54c8952b906.png?v=1693482531" class="w-100 p-3 d-none d-md-block" />
+
+
+      <!--Options of different types of food user can order with discount-->
+      <div class="popular-food-card mt-4 p-3">
+        <h5>Popular Food Brands</h5>
+        <div class="container">
+            <div class="row">
+                <div class="col-6 col-md-2">
+                    <img src="https://headsupfortails.com/cdn/shop/files/schesir_3b0aae6d-3af9-451c-97ed-541bae871572.png?v=1688822844" class="popular-food-brands-image-style"/>
+                    <div class="d-flex flex-column text-center">
+                        <p>Schesir</p>
+                        <h6><b>Upto 30% off</b></h6>
+                    </div>
+                </div>
+                <div class="col-6 col-md-2">
+                    <img src="https://headsupfortails.com/cdn/shop/files/Nature_s_Hug_7585b6c3-58d7-4f1b-81bc-c356bcdf3bc8.png?v=1688822659" class="popular-food-brands-image-style"/>
+                    <div class="d-flex flex-column text-center">
+                        <p>Nature's Hug</p>
+                        <h6><b>Upto 10% off</b></h6>
+                    </div>
+                </div>
+                <div class="col-6 col-md-2">
+                    <img src="https://headsupfortails.com/cdn/shop/files/loveabowl_c4fa687b-1e15-494a-b479-76af7d521c50.png?v=1688822723" class="popular-food-brands-image-style"/>
+                    <div class="d-flex flex-column text-center">
+                        <p>Loveabowl</p>
+                        <h6><b>New Launch</b></h6>
+                    </div>
+                </div>
+                <div class="col-6 col-md-2">
+                    <img src="https://headsupfortails.com/cdn/shop/files/farmina_6952747e-c852-47d9-81d9-bc5a44bf54b7.png?v=1688822789" class="popular-food-brands-image-style"/>
+                    <div class="d-flex flex-column text-center">
+                        <p>Farmina</p>
+                        <h6><b>Flat 10% off</b></h6>
+                    </div>
+                </div>
+                <div class="d-none d-md-block col-md-2">
+                    <img src="https://headsupfortails.com/cdn/shop/files/pedigree_1025e6e2-c28c-4424-b565-58e9e8f56e88.png?v=1688822575" class="popular-food-brands-image-style"/>
+                    <div class="d-flex flex-column text-center">
+                        <p>Pedigree</p>
+                        <h6><b>Upto 15% off</b></h6>
+                    </div>
+                </div>
+                <div class="d-none d-md-block col-md-2">
+                    <img src="https://headsupfortails.com/cdn/shop/files/RC_a6d60e8d-0bad-4552-981f-c3090d1caddc.png?v=1688822905" class="popular-food-brands-image-style"/>
+                    <div class="d-flex flex-column text-center">
+                        <p>Schesir</p>
+                        <h6><b>Upto 30% off</b></h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+
+       <!--reviews by customers-->
+      <div class="container">
+            <div class="row">
+                <div class="col-12 mt-3">
+                    <div class="d-flex flex-row m-2">
+                        <h5>The Wholesome Love</h5>
+                        <i class="fas fa-heart fa-spin fa-lg ml-3" style="color: #cd232b;"></i>
+                    </div>
+                </div>
+                <img src="https://headsupfortails.com/cdn/shop/files/T_01.png?v=1692809471" class="col-6 col-md-3"/>
+                <img src="https://headsupfortails.com/cdn/shop/files/T_02.png?v=1692809471" class="col-6 col-md-3"/>
+                <img src="https://headsupfortails.com/cdn/shop/files/T_03.png?v=1692809471" class="d-none d-md-block col-md-3"/>
+                <img src="https://headsupfortails.com/cdn/shop/files/T_04.png?v=1692809471" class="d-none d-md-block col-md-3"/>
+            </div>
+      </div>
+
+      <!--FOOTER SECTION for small devices-->
+      <div class="p-4 d-md-none">
+        <hr/>
+        <h6><b>ONLINE SHOPPING</b></h6>
+        <p style="color: grey; font-size: smaller;">
+            <a href="#" style="color: grey;">Dogs</a>|
+            <a href="#" style="color: grey;">Cats</a>|
+            <a href="#" style="color: grey;">Small Animals</a>|
+            <a href="#" style="color: grey;">Personalised Items</a>|
+            <a href="#" style="color: grey;">HUFT Blog</a>
+        </p>
+        <h6><b>QUICK LINKS</b></h6>
+        <p style="color: grey; font-size: smaller;">
+            <a href="#" style="color: grey;">Contact Us</a>|
+            <a href="#" style="color: grey;">Track Your Order</a>|
+            <a href="#" style="color: grey;">FAQs & Exchange Policy</a>|
+            <a href="#" style="color: grey;">Terms of Use</a>|
+            <a href="#" style="color: grey;">Privacy Policy</a>
+            <a href="#" style="color: grey;">HUFT Rewards</a>
+        </p>
+        <h6><b>EXPLORE</b></h6>
+        <p style="color: grey; font-size: smaller;">
+            <a href="#" style="color: grey;">About Us</a>|
+            <a href="#" style="color: grey;">Career</a>|
+            <a href="#" style="color: grey;">Awards</a>|
+            <a href="#" style="color: grey;">Pet Spa</a>|
+            <a href="#" style="color: grey;">Community</a>
+        </p>
+        <h6><b>ONLINE SHOPPING</b></h6>
+            <img src="https://cdn.shopify.com/s/files/1/0086/0795/7054/files/play_store.png?v=1683527854" class="download-img"/>
+            <img src="https://cdn.shopify.com/s/files/1/0086/0795/7054/files/app_store.png?v=1683527854" class="download-img" />
+      </div>
+
+      <!--FOOTER SECTION for medium & above devices-->
+      <div class="container d-none d-md-block">
+        <div class="row">
+            <div class="col-md-12">
+                <hr/>
+            </div>
+            <div class="col-md-3">
+                <h6><b>ONLINE SHOPPING</b></h6>
+                <p class="para-md-style">DOGS</a>
+                <p class="para-md-style">Cats</p>
+                <p class="para-md-style">Small Animals</p>
+                <p class="para-md-style">Personalised Item</p>
+                <p class="para-md-style">HUFT Blog</p>
+            </div>
+            <div class="col-md-3">
+                <h6><b>QUICK LINKS</b></h6>
+                <p class="para-md-style">Contact Us</p>
+                <p class="para-md-style">Track Your Order</p>
+                <p class="para-md-style">FAQs & Exchabge Policy</p>
+                <p class="para-md-style">Terms Of Use</p>
+                <p class="para-md-style">HUFT Rewards</p>
+            </div>
+            <div class="col-md-3">
+                <h6><b>EXPLORE</b></h6>
+                <p class="para-md-style">About Us</p>
+                <p class="para-md-style">Carrer</p>
+                <p class="para-md-style">Awards</p>
+                <p class="para-md-style">Pet Spa Item</p>
+                <p class="para-md-style">Customer Love</p>
+            </div>
+            <div class="col-md-3">
+                <h6><b>DOWNLOAD HUFT APP</b></h6>
+                <img src="https://cdn.shopify.com/s/files/1/0086/0795/7054/files/play_store.png?v=1683527854" class="w-100" />
+                <img src="https://cdn.shopify.com/s/files/1/0086/0795/7054/files/app_store.png?v=1683527854" class="w-100" />
+            </div>
+        </div>
+      </div>
+
+      <!---follow us on social media-->
+      <div class="d-flex flex-row justify-content-center mt-3 mb-3">
+        <div class="vr-footer-section-icon-container m-2">
+            <i class="fab fa-google icon"></i>
+        </div>
+        <div class="vr-footer-section-icon-container m-2">
+            <i class="fab fa-twitter icon"></i>
+        </div>
+        <div class="vr-footer-section-icon-container m-2">
+            <i class="fab fa-instagram icon"></i>
+        </div>
+        <div class="vr-footer-section-icon-container m-2">
+            <i class="fa fa-linkedin-square icon"></i>
+        </div>
+    </div>
+      <hr />
+      <!--copyright-->
+      <div class="text-center mb-3">
+        <i class="fa fa-copyright icon" aria-hidden="true"></i>
+        <span class="vr-footer-section-copyright">2020 by Rahul. Created with Bootstrap.</span>
+    </div>
+    <script src="prod.js"></script>
+</body>
+
+</html>
